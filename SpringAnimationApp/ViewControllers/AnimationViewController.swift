@@ -14,10 +14,9 @@ class AnimationViewController: UIViewController {
     @IBOutlet var springAnimationButton: SpringButton!
         
     var animations = Animation.getAnimations()
+    var randomAnimation: Animation!
 
     @IBAction func springAnimationButton(_ sender: SpringButton) {
-        var randomAnimation: Animation!
-        
         for animation in animations {
             randomAnimation = animation
             animations.shuffle()
@@ -32,7 +31,13 @@ class AnimationViewController: UIViewController {
         )
         
         springAnimationButton.setTitle(randomAnimation.preset, for: .normal)
-        springAnimationLabel.text = randomAnimation.preset
+        springAnimationLabel.text = """
+            Preset: \(randomAnimation.preset)
+            Curve: \(randomAnimation.curve)
+            Force: \(randomAnimation.force)
+            Duration: \(randomAnimation.duration)
+            Delay: \(randomAnimation.delay)
+        """
     }
     
 
