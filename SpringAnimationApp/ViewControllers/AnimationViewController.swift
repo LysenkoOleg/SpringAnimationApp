@@ -31,13 +31,8 @@ class AnimationViewController: UIViewController {
         )
         
         springAnimationButton.setTitle(randomAnimation.preset, for: .normal)
-        springAnimationLabel.text = """
-            Preset: \(randomAnimation.preset)
-            Curve: \(randomAnimation.curve)
-            Force: \(randomAnimation.force)
-            Duration: \(randomAnimation.duration)
-            Delay: \(randomAnimation.delay)
-        """
+        
+        springAnimationLabel.text = displayingInformation()
     }
     
 
@@ -49,5 +44,16 @@ class AnimationViewController: UIViewController {
         springAnimationView.duration = CGFloat(duration)
         springAnimationView.delay = CGFloat(delay)
         springAnimationView.animate()
+    }
+    
+    private func displayingInformation() -> String {
+        let information = """
+            Preset: \(randomAnimation.preset)
+            Curve: \(randomAnimation.curve)
+            Force: \(randomAnimation.force)
+            Duration: \(randomAnimation.duration)
+            Delay: \(randomAnimation.delay)
+        """
+        return information
     }
 }
