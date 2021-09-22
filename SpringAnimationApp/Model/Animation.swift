@@ -11,33 +11,34 @@ struct Animation {
     let force: Double
     let duration: Double
     let delay: Double
-    
+ 
+}
+ 
+extension Animation {
     static func getAnimations() -> [Animation] {
-        [
-        Animation(
-            preset: "shake",
-            curve: "spring",
-            force: 1.98,
-            duration: 1.04,
-            delay: 0.30),
-        Animation(
-            preset: "pop",
-            curve: "linear",
-            force: 1.67,
-            duration: 1.34,
-            delay: 0.45),
-        Animation(
-            preset: "morph",
-            curve: "easeIn",
-            force: 1.15,
-            duration: 1.60,
-            delay: 0.7),
-        Animation(
-            preset: "swing",
-            curve: "easeOut",
-            force: 1.0,
-            duration: 1.9,
-            delay: 0.15)
-        ]
+       
+        var animations: [Animation] = []
+        
+        let presets = DataManager.shared.preset.shuffled()
+        let curves = DataManager.shared.curve.shuffled()
+        
+        for index in 0..<curves.count {
+            let forces = DataManager.shared.force
+            let durations = DataManager.shared.duration
+            let delays = DataManager.shared.delay
+            
+            let animation = Animation(
+                preset: presets[index],
+                curve: curves[index],
+                force: forces,
+                duration: durations,
+                delay: delays
+            )
+            
+            animations.append(animation)
+        }
+        
+        return animations
+        
     }
 }

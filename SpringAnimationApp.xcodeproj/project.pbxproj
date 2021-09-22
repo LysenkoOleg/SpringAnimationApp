@@ -15,6 +15,7 @@
 		2C357A1C26FA601700B9F882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C357A1B26FA601700B9F882 /* Assets.xcassets */; };
 		2C357A1F26FA601700B9F882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C357A1D26FA601700B9F882 /* LaunchScreen.storyboard */; };
 		2C3CD94D26FA7EAD00419EA1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3CD94C26FA7EAD00419EA1 /* Animation.swift */; };
+		2C69F5C926FBCEDF00620440 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69F5C826FBCEDF00620440 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2C357A1E26FA601700B9F882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C357A2026FA601700B9F882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C3CD94C26FA7EAD00419EA1 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		2C69F5C826FBCEDF00620440 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		307F51233B4094427223313E /* Pods-SpringAnimationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpringAnimationApp.debug.xcconfig"; path = "Target Support Files/Pods-SpringAnimationApp/Pods-SpringAnimationApp.debug.xcconfig"; sourceTree = "<group>"; };
 		39FDB39362F77A3918D5F825 /* Pods_SpringAnimationApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpringAnimationApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADABE2139792DA0CAD24B83 /* Pods-SpringAnimationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpringAnimationApp.release.xcconfig"; path = "Target Support Files/Pods-SpringAnimationApp/Pods-SpringAnimationApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				2C357A2726FA604100B9F882 /* ViewControllers */,
 				2C357A2626FA603200B9F882 /* Storyboards */,
 				2C357A2A26FA60B100B9F882 /* Model */,
+				2C69F5C726FBCEB700620440 /* Services */,
 				2C357A2826FA606100B9F882 /* Sources */,
 				2C357A2926FA608200B9F882 /* App */,
 			);
@@ -124,6 +127,14 @@
 				2C3CD94C26FA7EAD00419EA1 /* Animation.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2C69F5C726FBCEB700620440 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2C69F5C826FBCEDF00620440 /* DataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BEA008367E87235CEB5B1D3D /* Frameworks */ = {
@@ -249,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C357A1726FA601600B9F882 /* AnimationViewController.swift in Sources */,
+				2C69F5C926FBCEDF00620440 /* DataManager.swift in Sources */,
 				2C357A1326FA601600B9F882 /* AppDelegate.swift in Sources */,
 				2C3CD94D26FA7EAD00419EA1 /* Animation.swift in Sources */,
 				2C357A1526FA601600B9F882 /* SceneDelegate.swift in Sources */,

@@ -13,14 +13,13 @@ class AnimationViewController: UIViewController {
     @IBOutlet var springAnimationLabel: UILabel!
     @IBOutlet var springAnimationButton: SpringButton!
         
-    var animations = Animation.getAnimations()
-    var randomAnimation: Animation!
+    private var animations = Animation.getAnimations()
+    private var randomAnimation: Animation!
 
     @IBAction func springAnimationButton(_ sender: SpringButton) {
-        for animation in animations {
-            randomAnimation = animation
-            animations.shuffle()
-        }
+        randomAnimation = animations.randomElement()
+        
+        springAnimationButton.setTitle(randomAnimation.preset, for: .normal)
         
         setUpAnimation(
             animation: randomAnimation.preset,
@@ -29,12 +28,9 @@ class AnimationViewController: UIViewController {
             duration: randomAnimation.duration,
             delay: randomAnimation.delay
         )
-        
-        springAnimationButton.setTitle(randomAnimation.preset, for: .normal)
-        
+                
         springAnimationLabel.text = displayingInformation()
     }
-    
 
 //MARK: - Private Methods
    private func setUpAnimation(animation: String, curve: String, force: Double, duration: Double, delay: Double) {
@@ -50,9 +46,9 @@ class AnimationViewController: UIViewController {
         let information = """
             Preset: \(randomAnimation.preset)
             Curve: \(randomAnimation.curve)
-            Force: \(randomAnimation.force)
-            Duration: \(randomAnimation.duration)
-            Delay: \(randomAnimation.delay)
+            Force: \(String(format: "%.2f", randomAnimation.force))
+            Duration: \(String(format: "%.2f", randomAnimation.duration))
+            Delay: \(String(format: "%.2f", randomAnimation.delay))
         """
         return information
     }
